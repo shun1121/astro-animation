@@ -1,0 +1,21 @@
+---
+---
+<header class="flex justify-end p-[12px] bg-gray-300">
+  <button class="btn border-2 border-[#4A4F54] text-[#4A4F54] rounded-full w-[80px] h-[80px]">
+    <div class="">
+      MENU
+    </div>
+  </button>
+</header>
+
+<script>
+  import { gsap } from 'gsap'
+
+  const btnRef = document.querySelector<HTMLElement>(
+    '.btn'
+  )
+  gsap.to(btnRef, {
+    x: -100,
+    duration: 0.5
+  })
+</script>

@@ -1,12 +1,15 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { Header } from '@/components/Header/Header';
+// import { Header } from '@/components/Header/Header';
+import Header from '@/components/Header/Header.astro';
+import Countup from '@/components/Countup/Countup.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<div>
 		<Header />
-		<h1 class="text-[24px] font-bold">Welcome to <span class="text-gradient">Astro</span></h1>
+		<h1 class="my-[32px] text-[40px] font-bold flex justify-center items-center">Welcome to <span class="ml-2">Astro</span></h1>
+		<Countup />
 	</div>
 </Layout>
 
