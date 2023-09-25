@@ -50,7 +50,6 @@
         trigger: countupTarget,
         start: 'top 80%',
         toggleActions: 'play none none reset',
-        markers: true,
       },
       onUpdate: () => {
         countupTarget.textContent = Math.floor(countupFrom?.count).toLocaleString()

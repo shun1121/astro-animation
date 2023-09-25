@@ -3,12 +3,14 @@ import Layout from '@/layouts/Layout.astro';
 // import { Header } from '@/components/Header/Header';
 import Header from '@/components/Header/Header.astro';
 import Countup from '@/components/Countup/Countup.astro';
+import Zoomin from '@/components/Zoomin/Zoomin.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<div>
 		<Header />
 		<h1 class="my-[32px] text-[40px] font-bold flex justify-center items-center">Welcome to <span class="ml-2">Astro</span></h1>
+		<Zoomin />
 		<Countup />
 	</div>
 </Layout>
