@@ -1,0 +1,39 @@
+---
+
+---
+
+<div id="zoomin-trigger">
+  <div class="relative h-screen w-full bg-black py-[60px] overflow-hidden">
+    <img src="/autumn.jpg" id="zoomin-target" class="mx-auto object-fit" />
+  </div>
+</div>
+
+<script>
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+  gsap.registerPlugin(ScrollTrigger)
+  const ZoominTrigger = document.getElementById('zoomin-trigger')
+  const ZoominTarget = document.getElementById('zoomin-target')
+  console.log(ZoominTarget)
+  gsap.set(ZoominTarget, {
+    yPercent: -50,
+    xPercent: -50,
+    top: "50%",
+    left: "50%",
+    minWidth: "100%", 
+    maxWidth: "100%",
+    position: "absolute"
+  })
+
+  const zoomInAnimation =gsap.fromTo(ZoominTarget, { scale: 1 }, { scale: 6, duration: 5, ease: "expoScale(0.5, 2, power2.inOut)", repeat: 0 })
+  
+  ScrollTrigger.create({
+    trigger: ZoominTrigger,
+    start: '46% center',
+    end: 'bottom center',
+    animation: zoomInAnimation,
+    markers: true,
+  })
+</script>
+
