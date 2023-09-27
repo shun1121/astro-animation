@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <div id="zoomin-trigger">
@@ -9,31 +8,37 @@
 </div>
 
 <script>
-  import { gsap } from 'gsap'
-  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger)
-  const ZoominTrigger = document.getElementById('zoomin-trigger')
-  const ZoominTarget = document.getElementById('zoomin-target')
-  console.log(ZoominTarget)
+  gsap.registerPlugin(ScrollTrigger);
+
+  const ZoominTrigger = document.getElementById("zoomin-trigger");
+  const ZoominTarget = document.getElementById("zoomin-target");
   gsap.set(ZoominTarget, {
     yPercent: -50,
     xPercent: -50,
     top: "50%",
     left: "50%",
-    minWidth: "100%", 
-    maxWidth: "100%",
-    position: "absolute"
-  })
+    minWidth: "100%",
+    position: "absolute",
+  });
 
-  const zoomInAnimation =gsap.fromTo(ZoominTarget, { scale: 1 }, { scale: 6, duration: 5, ease: "expoScale(0.5, 2, power2.inOut)", repeat: 0 })
-  
+  const zoomInAnimation = gsap.fromTo(
+    ZoominTarget,
+    { scale: 1 },
+    {
+      scale: 6,
+      duration: 5,
+      ease: "expoScale(0.5, 2, power3.inOut)",
+      repeat: 0,
+    }
+  );
+
   ScrollTrigger.create({
     trigger: ZoominTrigger,
-    start: '46% center',
-    end: 'bottom center',
+    start: "46% center",
     animation: zoomInAnimation,
     markers: true,
-  })
+  });
 </script>
-
